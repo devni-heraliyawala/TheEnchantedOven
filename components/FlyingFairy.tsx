@@ -10,11 +10,11 @@ export default function FlyingFairy() {
 
     useEffect(() => {
         const animate = (time: number) => {
-            timeRef.current = time * 0.0003; // Slowed down from 0.001
+            timeRef.current = time * 0.00015; // Slowed down even more (was 0.0003)
 
             // Lissajous curve for natural flight
-            const x = (Math.sin(timeRef.current * 0.5) * 45) + 50; // 5% to 95% width
-            const y = (Math.cos(timeRef.current * 1.5) * 20) + 40 + (Math.sin(timeRef.current * 0.2) * 20); // Varying height
+            const x = (Math.sin(timeRef.current * 0.5) * 45) + 50;
+            const y = (Math.cos(timeRef.current * 1.5) * 20) + 40 + (Math.sin(timeRef.current * 0.2) * 20);
 
             // Determine direction for sprite flipping
             const prevX = position.x;
@@ -49,10 +49,18 @@ export default function FlyingFairy() {
                 height: '60px',
                 transform: `translate(-50%, -50%) scaleX(${direction})`,
                 transition: 'transform 0.2s',
-                mixBlendMode: 'screen', // Removes black background
-                // In a real app we'd use Next/Image but for absolute positioning/animation div background is often smoother or simple img tag
+                // CSS Masking to turn black pixels transparent
+                WebkitMaskImage: 'url(/images/fairy-sprite.png)',
+                maskImage: 'url(/images/fairy-sprite.png)',
+                WebkitMaskMode: 'luminance',
+                maskMode: 'luminance',
+                WebkitMaskSize: 'contain',
+                maskSize: 'contain',
+                WebkitMaskRepeat: 'no-repeat',
+                maskRepeat: 'no-repeat',
+                backgroundColor: '#FFD700', // Solid gold color for the fairy body
             }}>
-                <img src="/images/fairy-sprite.png" alt="Fairy" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
+                {/* Empty div because we are using background color + mask */}
             </div>
 
             {/* Trailing Fireflies (Simulated with CSS) */}
