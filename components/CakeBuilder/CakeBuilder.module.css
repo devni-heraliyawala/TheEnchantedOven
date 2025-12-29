@@ -1,0 +1,135 @@
+.section {
+    padding: 6rem 1rem;
+    background-color: var(--color-background);
+    min-height: 100vh;
+}
+
+.heading {
+    text-align: center;
+    font-family: var(--font-serif);
+    font-size: 3rem;
+    color: var(--color-primary);
+    margin-bottom: 3rem;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    max-width: var(--max-width);
+    margin: 0 auto;
+    align-items: start;
+}
+
+.previewContainer {
+    position: sticky;
+    top: 100px;
+    background: white;
+    padding: 3rem;
+    border-radius: var(--radius);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 500px;
+}
+
+.controls {
+    background: white;
+    padding: 2.5rem;
+    border-radius: var(--radius);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+}
+
+.fieldGroup {
+    margin-bottom: 2.5rem;
+}
+
+.label {
+    display: block;
+    font-family: var(--font-serif);
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+    color: var(--color-text);
+}
+
+.optionsGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 1rem;
+}
+
+.optionButton {
+    padding: 1rem;
+    border: 1px solid #eee;
+    border-radius: var(--radius);
+    background: var(--color-background);
+    font-family: var(--font-sans);
+    font-size: 0.95rem;
+    transition: all 0.2s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    text-align: center;
+}
+
+.optionButton:hover {
+    border-color: var(--color-primary-light);
+    transform: translateY(-2px);
+}
+
+.selected {
+    border-color: var(--color-primary);
+    background-color: var(--color-primary-light);
+    color: var(--color-primary);
+    font-weight: 600;
+}
+
+.priceDisplay {
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid #eee;
+    text-align: right;
+}
+
+.totalLabel {
+    display: block;
+    font-family: var(--font-sans);
+    color: var(--color-text-light);
+    margin-bottom: 0.5rem;
+}
+
+.totalPrice {
+    font-family: var(--font-serif);
+    font-size: 2.5rem;
+    color: var(--color-primary);
+}
+
+.orderButton {
+    width: 100%;
+    margin-top: 1.5rem;
+    background-color: var(--color-primary);
+    color: white;
+    padding: 1.2rem;
+    border-radius: var(--radius);
+    font-size: 1.1rem;
+    font-family: var(--font-serif);
+    transition: background-color 0.3s ease;
+}
+
+.orderButton:hover {
+    background-color: #C07A8B;
+}
+
+@media (max-width: 900px) {
+    .container {
+        grid-template-columns: 1fr;
+    }
+
+    .previewContainer {
+        position: static;
+        min-height: 400px;
+        margin-bottom: 2rem;
+    }
+}

@@ -1,0 +1,157 @@
+/* Reset and Base Styles */
+
+:root {
+  /* Color Palette - Elegant Vintage Fairy (Moss/Champagne) */
+  --color-primary: #4A6741;
+  /* Vintage Moss Green */
+  --color-primary-light: #8FBC8F;
+  /* Dark Sea Green */
+  --color-background: #FDFCDC;
+  /* Creamy Sunlight */
+  --color-surface: rgba(255, 253, 230, 0.9);
+  /* Creamy Glass */
+  --color-text: #4A4036;
+  /* Deep Taupe */
+  --color-text-light: #7D7065;
+  /* Warm Grey-Brown */
+  --color-gold: #D4AF37;
+  /* Antique Metallic Gold */
+  --color-gold-light: #F4E4BC;
+  /* Champagne */
+  --color-accent-pink: #E1BEE7;
+  /* Soft Orchid */
+  --color-accent-purple: #9575CD;
+  /* Muted Lavender */
+
+  /* Layout */
+  --max-width: 1280px;
+  --header-height: 80px;
+  --radius: 16px;
+  /* Softer, rounder feel */
+
+  /* Typography Variables */
+  --font-serif: var(--font-playfair);
+  --font-script: var(--font-dancing);
+  --font-sans: var(--font-lato);
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+  background-color: var(--color-background);
+  /* Whimsical Fairy Village Background */
+  background-image:
+    linear-gradient(rgba(255, 255, 240, 0.2), rgba(255, 255, 240, 0.4)),
+    url('/images/whimsical-village-bg.jpg');
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  color: var(--color-text);
+  font-family: var(--font-sans), sans-serif;
+  scroll-behavior: smooth;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-serif), serif;
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--color-text);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+button {
+  font-family: var(--font-sans), sans-serif;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+/* Animations */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-up {
+  opacity: 0;
+  animation: fadeUp 0.8s ease forwards;
+}
+
+.shimmer {
+  position: relative;
+  overflow: hidden;
+}
+
+.shimmer::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(to right,
+      transparent 0%,
+      rgba(255, 255, 255, 0.8) 50%,
+      transparent 100%);
+  transform: skewX(-20deg);
+  animation: shimmer 3s infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    left: -100%;
+  }
+
+  100% {
+    left: 200%;
+  }
+}
+
+.shimmer-hover {
+  position: relative;
+  overflow: hidden;
+}
+
+.shimmer-hover::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(to right,
+      transparent 0%,
+      rgba(255, 236, 179, 0.6) 50%,
+      /* Warm Honey Shimmer */
+      transparent 100%);
+  transform: skewX(-20deg);
+  transition: left 0.5s;
+}
+
+.shimmer-hover:hover::after {
+  animation: shimmer 1s forwards;
+}

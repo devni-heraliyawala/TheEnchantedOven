@@ -1,0 +1,52 @@
+.section {
+    padding: 8rem 2rem;
+    background-color: transparent;
+    /* Move background to global or use semi-transparent */
+    text-align: center;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: rgba(255, 253, 230, 0.85);
+    /* Creamy Glass */
+    padding: 3rem;
+    border-radius: var(--radius);
+    backdrop-filter: blur(8px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.title {
+    font-family: var(--font-serif);
+    font-size: 3rem;
+    color: var(--color-gold);
+    /* Gold title for contrast */
+    margin-bottom: 3rem;
+}
+
+.text {
+    font-family: var(--font-sans);
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: var(--color-text);
+    margin-bottom: 1.5rem;
+}
+
+.signature {
+    font-family: var(--font-script);
+    font-size: 2rem;
+    color: var(--color-primary-light);
+    /* Pink signature */
+    margin-top: 3rem;
+}
+
+.animate {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.visible {
+    opacity: 1;
+    transform: translateY(0);
+}

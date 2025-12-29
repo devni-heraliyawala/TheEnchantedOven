@@ -1,0 +1,199 @@
+.section {
+    padding: 8rem 2rem;
+    background-color: transparent;
+    /* Changed from var(--color-background) */
+    position: relative;
+
+    .header {
+        text-align: center;
+        margin-bottom: 4rem;
+    }
+
+    .heading {
+        font-family: var(--font-serif);
+        font-size: 3rem;
+        color: #FDF5E6;
+        /* Old Lace / Rich Cream */
+        text-shadow: 2px 2px 4px rgba(60, 40, 30, 0.5);
+        /* Deep wood shadow */
+        margin-bottom: 0.5rem;
+    }
+
+    .subheading {
+        font-family: var(--font-script);
+        font-size: 1.8rem;
+        color: var(--color-gold);
+    }
+
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+        max-width: var(--max-width);
+        margin: 0 auto;
+    }
+
+    .gridItem {
+        position: relative;
+        aspect-ratio: 1;
+        /* Perfect Square */
+        border-radius: var(--radius);
+        cursor: pointer;
+        overflow: hidden;
+        /* Premium double border effect */
+        border: 1px solid rgba(212, 175, 55, 0.3);
+        padding: 10px;
+        /* Space for the inner border */
+        background: rgba(255, 253, 230, 0.7);
+        /* Creamy Glass */
+        /* Glassy Green/Blue */
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        transition: transform 0.4s ease, box-shadow 0.4s ease;
+        backdrop-filter: blur(5px);
+    }
+
+    .gridItem:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 20px 40px rgba(255, 140, 0, 0.3);
+        /* Warm Oven Amber Glow */
+        /* Gold shadow replaced with Amber */
+    }
+
+    .imageWrapper {
+        width: 100%;
+        height: 100%;
+        border-radius: 4px;
+        overflow: hidden;
+        position: relative;
+        animation: magicPulse 4s infinite alternate;
+        /* Gentle permanent glow */
+    }
+
+    .image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.8s ease;
+    }
+
+    .gridItem:hover .image {
+        transform: scale(1.08);
+    }
+
+    .overlay {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        right: 10px;
+        bottom: 10px;
+        background: rgba(46, 70, 61, 0.7);
+        /* Forest Green tint */
+        opacity: 0;
+        transition: opacity 0.4s ease;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        backdrop-filter: blur(2px);
+        border-radius: 4px;
+        color: white;
+        gap: 1rem;
+    }
+
+    .gridItem:hover .overlay {
+        opacity: 1;
+    }
+
+    .zoomIcon {
+        width: 32px;
+        height: 32px;
+        color: var(--color-gold);
+        margin-bottom: 0.5rem;
+    }
+
+    .itemTitle {
+        font-family: var(--font-serif);
+        font-size: 1.2rem;
+        color: #FDF5E6;
+        /* Cream */
+        text-align: center;
+        margin-bottom: 0.2rem;
+        font-weight: bold;
+    }
+
+    .viewText {
+        font-family: var(--font-sans);
+        font-size: 0.9rem;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        opacity: 0.9;
+    }
+
+    /* Lightbox */
+    .lightbox {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(255, 253, 230, 0.95);
+        /* Creamy Overlay */
+        /* Deep Dark Overlay */
+        /* Forest Green Backdrop */
+        z-index: 2000;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        animation: fadeIn 0.4s ease;
+        backdrop-filter: blur(8px);
+    }
+
+    .lightboxContent {
+        position: relative;
+        max-width: 90vw;
+        max-height: 90vh;
+        box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+        border: 2px solid var(--color-gold);
+        border-radius: 4px;
+    }
+
+    .lightboxImage {
+        display: block;
+        max-width: 100%;
+        max-height: 85vh;
+        object-fit: contain;
+    }
+
+    .closeButton {
+        position: absolute;
+        top: 2rem;
+        right: 2rem;
+        background: rgba(0, 0, 0, 0.5);
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        border: 1px solid var(--color-gold);
+        color: white;
+        font-size: 2rem;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: background 0.3s;
+    }
+
+    .closeButton:hover {
+        background: var(--color-gold);
+    }
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: scale(0.95);
+        }
+
+        to {
+            opacity: 1;
+            transform: scale(1);
+        }
+    }

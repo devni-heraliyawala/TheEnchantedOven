@@ -1,0 +1,155 @@
+.section {
+    padding: 6rem 2rem;
+    background-color: transparent;
+    /* Removed solid white */
+}
+
+.heading {
+    text-align: center;
+    font-family: var(--font-serif);
+    font-size: 3rem;
+    color: #FDF5E6;
+    /* Old Lace / Rich Cream */
+    text-shadow: 2px 2px 4px rgba(60, 40, 30, 0.5);
+    /* Deep wood shadow for contrast */
+    margin-bottom: 4rem;
+    position: relative;
+    display: inline-block;
+    /* Glitter effect */
+    background: linear-gradient(45deg, #FDF5E6, #FFD700, #FDF5E6);
+    background-size: 200% auto;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: shineText 3s linear infinite;
+    text-shadow: none;
+    /* Removed shadow to allow gradient to show */
+    filter: drop-shadow(2px 2px 4px rgba(60, 40, 30, 0.5));
+    /* Use filter for shadow on gradient text */
+}
+
+@keyframes shineText {
+    to {
+        background-position: 200% center;
+    }
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    max-width: var(--max-width);
+    margin: 0 auto;
+}
+
+.card {
+    background: rgba(255, 253, 230, 0.85);
+    /* Creamy Glass */
+    /* Semi-transparent for background visibility */
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 215, 0, 0.1);
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.6s ease, transform 0.6s ease;
+    cursor: pointer;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(255, 140, 0, 0.25);
+    /* Warm Oven Amber Glow */
+    border: 1px solid rgba(255, 215, 0, 0.4);
+}
+
+.imagePlaceholder {
+    width: 100%;
+    height: 250px;
+    background-color: var(--color-background);
+    border-bottom: 3px solid var(--color-primary-light);
+    overflow: hidden;
+    position: relative;
+    /* For overlay */
+    animation: magicPulse 3s infinite alternate;
+    /* Gentle permanent glow */
+}
+
+.menuImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.8s ease;
+}
+
+.card:hover .menuImage {
+    transform: scale(1.15);
+    filter: brightness(1.1);
+    /* Slight brightness increase */
+}
+
+/* Magic Pulse Animation */
+@keyframes magicPulse {
+    0% {
+        box-shadow: 0 0 10px rgba(255, 140, 0, 0.2);
+    }
+
+    100% {
+        box-shadow: 0 0 20px rgba(255, 215, 0, 0.5), 0 0 40px rgba(255, 140, 0, 0.3);
+    }
+}
+
+.imagePlaceholder::after {
+    /* Magical Shine Overlay */
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.4), transparent);
+    transform: skewX(-25deg);
+    transition: 0.5s;
+    pointer-events: none;
+}
+
+.card:hover .imagePlaceholder::after {
+    left: 200%;
+    transition: 0.7s ease-in-out;
+}
+
+.content {
+    padding: 1.5rem;
+    text-align: left;
+}
+
+.tag {
+    font-family: var(--font-sans);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--color-gold);
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+.name {
+    font-family: var(--font-serif);
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: var(--color-text);
+    /* Dark Wood Brown */
+    /* Light text for dark card */
+}
+
+.description {
+    font-family: var(--font-sans);
+    font-size: 1rem;
+    color: var(--color-text-light);
+}
