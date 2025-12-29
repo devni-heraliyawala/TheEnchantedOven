@@ -10,7 +10,7 @@ export default function FlyingFairy() {
 
     useEffect(() => {
         const animate = (time: number) => {
-            timeRef.current = time * 0.001; // Seconds
+            timeRef.current = time * 0.0003; // Slowed down from 0.001
 
             // Lissajous curve for natural flight
             const x = (Math.sin(timeRef.current * 0.5) * 45) + 50; // 5% to 95% width
@@ -49,7 +49,7 @@ export default function FlyingFairy() {
                 height: '60px',
                 transform: `translate(-50%, -50%) scaleX(${direction})`,
                 transition: 'transform 0.2s',
-                filter: 'drop-shadow(0 0 15px gold)',
+                mixBlendMode: 'screen', // Removes black background
                 // In a real app we'd use Next/Image but for absolute positioning/animation div background is often smoother or simple img tag
             }}>
                 <img src="/images/fairy-sprite.png" alt="Fairy" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
