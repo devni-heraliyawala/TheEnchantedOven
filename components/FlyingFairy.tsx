@@ -10,7 +10,7 @@ export default function FlyingFairy() {
 
     useEffect(() => {
         const animate = (time: number) => {
-            timeRef.current = time * 0.00005; // Drastically slower drift for dreamy effect
+            timeRef.current = time * 0.0001; // Goldilocks speed: not too fast, not too slow
 
             // Lissajous curve for natural flight
             const x = (Math.sin(timeRef.current * 0.5) * 45) + 50;

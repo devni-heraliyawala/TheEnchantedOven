@@ -1,27 +1,27 @@
 /* Reset and Base Styles */
 
 :root {
-  /* Color Palette - Elegant Vintage Fairy (Moss/Champagne) */
-  --color-primary: #4A6741;
-  /* Vintage Moss Green */
-  --color-primary-light: #8FBC8F;
-  /* Dark Sea Green */
-  --color-background: #FDFCDC;
-  /* Creamy Sunlight */
-  --color-surface: rgba(255, 253, 230, 0.9);
-  /* Creamy Glass */
-  --color-text: #4A4036;
-  /* Deep Taupe */
-  --color-text-light: #7D7065;
-  /* Warm Grey-Brown */
-  --color-gold: #D4AF37;
-  /* Antique Metallic Gold */
-  --color-gold-light: #F4E4BC;
-  /* Champagne */
-  --color-accent-pink: #E1BEE7;
-  /* Soft Orchid */
-  --color-accent-purple: #9575CD;
-  /* Muted Lavender */
+  /* Color Palette - Enchanted Sugar Garden */
+  --color-primary: #2d5a27;
+  /* Deep Enchanted Emerald */
+  --color-primary-light: #a3e6aa;
+  /* Pale Mint Leaf */
+  --color-background: #fffdf5;
+  /* Vanilla Cream */
+  --color-surface: rgba(255, 255, 255, 0.9);
+  /* Frosted Sugar Glass */
+  --color-text: #5d4037;
+  /* Milk Chocolate */
+  --color-text-light: #8d6e63;
+  /* Cocoa Powder */
+  --color-gold: #ffd700;
+  /* Pixie Dust Gold */
+  --color-gold-light: #fff8e1;
+  /* Starlight Glow */
+  --color-accent-pink: #f8bbd0;
+  /* Sugar Rose */
+  --color-accent-purple: #e1bee7;
+  /* Fairy Lavender */
 
   /* Layout */
   --max-width: 1280px;
